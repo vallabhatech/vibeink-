@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <title>Username Entry & Webtoon Gallery</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Username Entry Page -->
+    <div id="entryPage" class="container">
+        <h1>Enter Username</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <p id="usernameError" style="color: red; display: none;">Please enter a username.</p>
+        <button onclick="goToGallery()">Next</button>
+    </div>
+
+    <!-- Webtoon Gallery Page (Initially hidden) -->
+    <div id="galleryPage" class="gallery-container" style="display:none;">
+        <button class="back-button" onclick="goBack()"></button>
+        <h1>Welcome to Webtoon Gallery</h1>
+        <h2 id="greeting"></h2>
+        <p>I am Koko, your assistant</p>
+        <img id="userImage" src="https://i.pinimg.com/736x/b9/e9/34/b9e9341e220d890215ce68d21405f93f.jpg" alt="">
+        <button id="startButton" onclick="goToGenreSelection()">Next</button>
+    </div>
+
+    <!-- Genre Selection Page -->
+    <div id="genreSelectionPage" class="genre-selection" style="display:none;">
+        <button class="back-button" onclick="goBackToGallery()"></button>
+        <h3>What genre would you like to watch?</h3>
+        <label><input type="checkbox" id="fantasy"> Fantasy</label><br>
+        <label><input type="checkbox" id="comedy"> Comedy</label><br>
+        <label><input type="checkbox" id="romance"> Romance</label><br>
+        <label><input type="checkbox" id="thriller"> Thriller</label><br>
+        <label><input type="checkbox" id="action"> Action</label><br>
+        <label><input type="checkbox" id="drama"> Drama</label><br>
+        <label><input type="checkbox" id="sci-fi"> Sci-Fi</label><br>
+        <label><input type="checkbox" id="sliceOfLife"> Slice of Life</label><br>
+        <label><input type="checkbox" id="others"> Others</label><br>
+        <button class="next-button" onclick="submitGenres()">Next</button>
+    </div>
+
+   <!-- Fantasy Webtoon Details Page -->
+    <div id="fantasyPage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Fantasy Webtoons</h2>
+        <div class="webtoon-container">
+            <!-- Webtoon 1: Not Your Typical Reincarnation Story -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/90/10/1e/90101e457cb0a4801af687d6dd9ebf3b.jpg" alt="Not Your Typical Reincarnation Story Poster">
+                <h3>Not Your Typical Reincarnation Story</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1,234,567</p>
+                <p><strong>Genre:</strong> Fantasy, Romance</p>
+                <p><strong>Author:</strong> Lemon Frog</p>
+                <p><strong>Number of Episodes:</strong> 53</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 2: The Remarried Empress -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/12/e7/5d/12e75d48ee005c299216e04efb778fa1.jpg" alt="The Remarried Empress Poster">
+                <h3>The Remarried Empress</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 3,456,789</p>
+                <p><strong>Genre:</strong> Romance, Fantasy</p>
+                <p><strong>Author:</strong> Alphatales</p>
+                <p><strong>Number of Episodes:</strong> 120</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 3: My In-Laws are Obsessed with Me -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/60/26/4b/60264b094e4bdf929cefc91d7134ccdd.jpg" alt="My In-Laws are Obsessed with Me Poster">
+                <h3>My In-Laws are Obsessed with Me</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 567,890</p>
+                <p><strong>Genre:</strong> Romance, Drama</p>
+                <p><strong>Author:</strong> LoveSeeker</p>
+                <p><strong>Number of Episodes:</strong> 42</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 4: Moonstruck -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/ad/54/1a/ad541aca6becc2b51ca1c1fa00a251b7.jpg" alt="Moonstruck Poster">
+                <h3>Moonstruck</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 876,543</p>
+                <p><strong>Genre:</strong> Drama, Romance</p>
+                <p><strong>Author:</strong> Heartbreak Studio</p>
+                <p><strong>Number of Episodes:</strong> 30</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 5: Heart Conquest  -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/b0/fe/c4/b0fec47814794ab19b37174e350b37f7.jpg" alt=" Heart Conquest ">
+                <h3>  Heart Conquest </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 756,789</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Poki</p>
+                <p><strong>Number of Episodes:</strong> 89</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 6: Duchess in Ruins -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/4e/7b/c3/4e7bc380a34e5a646ac351f34098ce77.jpg" alt="Duchess in Ruins">
+                <h3> Duchess in Ruins</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 467,890</p>
+                <p><strong>Genre:</strong> Romance, Drama</p>
+                <p><strong>Author:</strong> Candlebambi</p>
+                <p><strong>Number of Episodes:</strong> 15</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 7: I Thought My Time Was Up! -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f8/f2/45/f8f245ae75c7d9bdb761a8785e8693ab.jpg" alt=" I Thought My Time Was Up! ">
+                <h3> I Thought My Time Was Up! </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 643,789</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Essie,Hyeyong,Ari Choi</p>
+                <p><strong>Number of Episodes:</strong> 81</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 8: Adopted by a Murderous Duke Family -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/5d/da/27/5dda27e90e99603fc832f729f9a4b51e.jpg" alt="Adopted by a Murderous Duke Family ">
+                <h3> Adopted by a Murderous Duke Family </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 624,789</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Rogang,URang,Da-Woo</p>
+                <p><strong>Number of Episodes:</strong> 48</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 9:From a Knight to a Lady -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/1200x/5f/43/f0/5f43f0d845ff922e9f22aaee82235c24.jpg" alt="From a Knight to a Lady">
+                <h3> From a Knight to a Lady </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 624,789</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Ink.,Hyerim Sung</p>
+                <p><strong>Number of Episodes:</strong> 142</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 10:What the Evil Dragon Lives For -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/df/1a/2e/df1a2e63f30acb1b46752c76b2743ca1.jpg" alt="What the Evil Dragon Lives For">
+                <h3> What the Evil Dragon Lives For</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 365,63</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> manubi,Honaran</p>
+                <p><strong>Number of Episodes:</strong> 65</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 11:Frozen Hearts -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/c6/d1/cb/c6d1cb585cfeac162574f6cfda0107f5.jpg" alt="Frozen Hearts">
+                <h3> Frozen Hearts</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 345,63</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> HWIYO</p>
+                <p><strong>Number of Episodes:</strong> 12</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 12:Fallen to Paradise -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/d6/3c/f2/d63cf23fba17afa8333ac8aa60f6fde6.jpg" alt="Fallen to Paradise">
+                <h3> Fallen to Paradise</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 867,867</p>
+                <p><strong>Genre:</strong> Romance,Fantasy</p>
+                <p><strong>Author:</strong> Candlebambi</p>
+                <p><strong>Number of Episodes:</strong> 51</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 13:Your Throne -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/03/1c/9f/031c9f43f21924beb42314eb1b3d0f97.jpg" alt="Your Throne">
+                <h3> Your Throne</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1,876,867</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> SAM</p>
+                <p><strong>Number of Episodes:</strong> 238</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 14:Men of the Harem-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/dd/ce/f7/ddcef77e3ebe908f631d752ac5086da5.jpg" alt="Men of the Harem">
+                <h3> Men of the Harem</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1,378,867</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> HereLee</p>
+                <p><strong>Number of Episodes:</strong> 182</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 15:The Fateful Invitation-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/29/55/40/295540fca0a8da24b03e5b6f70e2e0c7.jpg" alt="The Fateful Invitation">
+                <h3>The Fateful Invitation</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 13,786,728</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> INhong,Haeong,Rina</p>
+                <p><strong>Number of Episodes:</strong> 70</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+           <!-- Webtoon 16:A Couple of Obligations-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/bb/43/a7/bb43a7d6e718084c14299e2a531b7987.jpg" alt="A Couple of Obligations">
+                <h3>A Couple of Obligations</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 4,128,763</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> GULDAK,Eun,ASONA,Pinku</p>
+                <p><strong>Number of Episodes:</strong> 45</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 17: Marionetta-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/3a/ea/61/3aea616c58cd883766497b1bb387a467.jpg" alt="Marionetta">
+                <h3>Marionetta</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 47,987,286</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Míriam Bonastre Tur</p>
+                <p><strong>Number of Episodes:</strong> 72</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 18:The Dragon King’s Bride -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/d7/b3/28/d7b3287e63fbb61d07f935e4d50bdf90.jpg" alt="The Dragon King’s Bride">
+                <h3> The Dragon King’s Bride</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 98,789</p>
+                <p><strong>Genre:</strong> Fantasy</p>
+                <p><strong>Author:</strong> Kanghee Jamae</p>
+                <p><strong>Number of Episodes:</strong> 86</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 19:When the Mad Emperor Holds Me -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/22/c2/8e/22c28e6f37d2426455b09e807b51e133.jpg" alt="When the Mad Emperor Holds Me">
+                <h3> When the Mad Emperor Holds Me</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 45,673</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> Yim Hye</p>
+                <p><strong>Number of Episodes:</strong> 29</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 20:The Strongest Florist -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/c2/be/cb/c2becb473fadcc95a9932a7ea2628011.jpg" alt="The Strongest Florist">
+                <h3> The Strongest Florist</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 59,786</p>
+                <p><strong>Genre:</strong> Fantasy,Action</p>
+                <p><strong>Author:</strong> Kumtata</p>
+                <p><strong>Number of Episodes:</strong> 216</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comedy Webtoon Details Page -->
+    <div id="comedyPage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Comedy Webtoons</h2>
+        <div class="webtoon-container">
+            <!-- Webtoon 1:1HP Club -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/e1/93/a7/e193a778d86ad5c5a8d6e672e5f6777f.jpg" alt="1HP Club">
+                <h3> 1HP Club </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 67,78,898</p>
+                <p><strong>Genre:</strong> Fantasy,Comdey</p>
+                <p><strong>Author:</strong>Elfboi</p>
+                <p><strong>Number of Episodes:</strong> 179</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 2:Swolemates-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/74/80/c5/7480c53387b87f05e8d9456ec30e3b9a.jpg" alt="Swolemates">
+                <h3> Swolemates </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 37,23,898</p>
+                <p><strong>Genre:</strong> Comdey</p>
+                <p><strong>Author:</strong>LummyPix</p>
+                <p><strong>Number of Episodes:</strong> 94</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 3:I Am the Villain-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/a0/17/83/a01783c7bdf293bd688e6945c48124e0.jpg" alt="I Am the Villain">
+                <h3> I Am the Villain</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 50,287,602</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> Sejji</p>
+                <p><strong>Number of Episodes:</strong> 66</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 4:To Whom It No Longer Concerns-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f2/a8/01/f2a801075e9be0b959a15764609a5b0d.jpg" alt="To Whom It No Longer Concerns">
+                <h3> To Whom It No Longer Concerns</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 23,608,653</p>
+                <p><strong>Genre:</strong> Comdey,Drama</p>
+                <p><strong>Author:</strong> LICO</p>
+                <p><strong>Number of Episodes:</strong> 32</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+           
+            <!-- Webtoon 5:High Class Homos-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/fa/5f/75/fa5f75ca514a6727dc6b8cc562738862.jpg" alt="High Class Homos">
+                <h3> High Class Homos</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>128,678,783</p>
+                <p><strong>Genre:</strong> Comdey</p>
+                <p><strong>Author:</strong> Momozerii</p>
+                <p><strong>Number of Episodes:</strong> 173</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 6:Can't Get Enough of You-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/60/89/11/608911b0be5d6389e8f0aaaa467cfd56.jpg" alt="Can't Get Enough of You">
+                <h3> Can't Get Enough of You</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>14.423,432</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> VODAUVEU,QuornQuorn</p>
+                <p><strong>Number of Episodes:</strong> 47</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 7:The Ki Sisters-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/07/ed/52/07ed5243f923abafca9f824571f3829f.jpg" alt="The Ki Sisters">
+                <h3> The Ki Sisters </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 10.456,653</p>
+                <p><strong>Genre:</strong> Comdey</p>
+                <p><strong>Author:</strong>bumbae</p>
+                <p><strong>Number of Episodes:</strong> 31</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 8:Your Smile is a Trap-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/6d/d3/26/6dd32613f297b57895f379282ddbe22b.jpg" alt="Your Smile is a Trap">
+                <h3> Your Smile is a Trap</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>85.875,654</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> AENGO</p>
+                <p><strong>Number of Episodes:</strong> 149</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 9:It’s Just Business-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/eb/1e/f1/eb1ef1d25c6dffb8d87a04613e91ded5.jpg" alt="It’s Just Business">
+                <h3> It’s Just Business </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 8.764,924</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>youngha,gongsa</p>
+                <p><strong>Number of Episodes:</strong> 52</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+              <!-- Webtoon 10:My Stepdaughter is a Bunny-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/2b/1d/eb/2b1debb54adf2277a3a96104a1df374b.jpg" alt="My Stepdaughter is a Bunny">
+                <h3> My Stepdaughter is a Bunny </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 2.965,432</p>
+                <p><strong>Genre:</strong> Comdey,Fantasy</p>
+                <p><strong>Author:</strong>Karin Park,Sisse</p>
+                <p><strong>Number of Episodes:</strong> 30</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+               <!-- Webtoon 11:Who’s That Long-Haired Senior?-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/95/ea/fe/95eafe0ea5fa61b78c6e5e322678a77a.jpg" alt="Who’s That Long-Haired Senior?">
+                <h3> Who’s That Long-Haired Senior? </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1.874,653</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>bullgwanhu author info</p>
+                <p><strong>Number of Episodes:</strong> 18</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 12:This is a Campus Romance Series-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/17/0c/a3/170ca3f7debefd3079f25e5032c24e12.jpg" alt="This is a Campus Romance Series">
+                <h3> This is a Campus Romance Series</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>6.385,983</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> Kite</p>
+                <p><strong>Number of Episodes:</strong> 60</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 13:So I Married the Anti-Fan-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/d4/de/95/d4de956336013872baebe37670576c3f.jpg" alt="So I Married the Anti-Fan">
+                <h3> So I Married the Anti-Fan</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>37.694,854</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> Jaerim,Eunjeong Kim</p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 14:Our Beloved Summer-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/50/2f/ec/502fece2464767410f4737209116aaa6.jpg" alt="Our Beloved Summer">
+                <h3> Our Beloved Summer </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 7.184,398</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>Han Kyoung Chal , Lee Naeun</p>
+                <p><strong>Number of Episodes:</strong> 6</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 15:Supervillainy-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/bd/80/d7/bd80d702e4787d4aa59bc698b59f6e0f.jpg" alt="Supervillainy">
+                <h3> Supervillainy </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 605,915</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>Razz G</p>
+                <p><strong>Number of Episodes:</strong> 21</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 16:Operation: True Love-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/3a/97/5a/3a975ae52f7d3a7bca0f98d79fd233da.jpg" alt="Operation: True Love">
+                <h3> Operation: True Love</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>247.653,754</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> kkokkalee,Dledumb</p>
+                <p><strong>Number of Episodes:</strong> 111</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 17:Cursed Princess Club-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/91/73/8b/91738be990a36cb7632beb87ea0cc8a9.jpg" alt="Cursed Princess Club">
+                <h3> Cursed Princess Club</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>278.854,985</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong> LambCat</p>
+                <p><strong>Number of Episodes:</strong> 11</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+           </div>
+           <!-- Webtoon 18:Not an Angel-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/50/44/f7/5044f7f1b314af92ff78aa4ea23560e7.jpg" alt="Not an Angel">
+                <h3> Not an Angel </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1.653,984</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>Castella,Pyoryu</p>
+                <p><strong>Number of Episodes:</strong> 10</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 19:Introverted Us-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f2/9b/97/f29b97c9caba861518adece62bc7f310.jpg" alt="Introverted Us">
+                <h3> Introverted Us </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 4.246,963</p>
+                <p><strong>Genre:</strong> Comdey,Romance</p>
+                <p><strong>Author:</strong>NA </p>
+                <p><strong>Number of Episodes:</strong> 23</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Romance Webtoon Details Page -->
+    <div id="romancePage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Romance Webtoons</h2>
+        <div class="webtoon-container">
+            <!-- Webtoon 1:Selfish Romance-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/bb/34/37/bb3437cdda5e7ac04eff67c2d2e73cac.jpg" alt="Selfish Romance">
+                <h3>Selfish Romance</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 18,786,728</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong> Gyogyo Park</p>
+                <p><strong>Number of Episodes:</strong>31</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 2:A Child Who Looks Like Me-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f9/80/69/f9806902a9ea91d3a469508311fbc881.jpg" alt="A Child Who Looks Like Me">
+                <h3>A Child Who Looks Like Me</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 81,87,523</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong> FLADA , PATNOC </p>
+                <p><strong>Number of Episodes:</strong>32</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 3:I Thought My Time Was Up!-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/e5/be/d3/e5bed34dcc08d8591ac0434f371db1b8.jpg" alt="I Thought My Time Was Up!">
+                <h3>I Thought My Time Was Up!</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 66,53,082</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong>Essie,Hyeyong,Ari Choi </p>
+                <p><strong>Number of Episodes:</strong>81</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 4:The Villainess Just Wants to Live in Peace! -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/3a/7c/12/3a7c120c9104649dad80a230c97269ab.jpg" alt="The Villainess Just Wants to Live in Peace!">
+                <h3> The Villainess Just Wants to Live in Peace!</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 9,65,786</p>
+                <p><strong>Genre:</strong> Romance</p>
+                <p><strong>Author:</strong> Graycat,Honaran,Lee Harin</p>
+                <p><strong>Number of Episodes:</strong> 26</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 5:The Reason for the Twin Lady’s Disguise-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f4/25/5f/f4255f39ea9bdfaf1ed5bd55be4620c9.jpg" alt="The Reason for the Twin Lady’s Disguise">
+                <h3>The Reason for the Twin Lady’s Disguise</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 22,745,602</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong>Amamiya Ley,MONA </p>
+                <p><strong>Number of Episodes:</strong>72</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 6:Couple Breaker-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/51/aa/27/51aa2797e75a99dc7dd1460107217069.jpg" alt="Couple Breaker">
+                <h3>Couple Breaker</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 35,247,098</p>
+                <p><strong>Genre:</strong>Romance,Drama</p>
+                <p><strong>Author:</strong>Maenggi Ki , Taegeon</p>
+                <p><strong>Number of Episodes:</strong>82</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f2/89/db/f289db0f4138bae38e003aa069e219f2.jpg" alt="Childhood Friend Complex">
+                <h3>Childhood Friend Complex</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 34.8M</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong>EUNHI </p>
+                <p><strong>Number of Episodes:</strong>36</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f8/cb/12/f8cb12553a3da03b6d899010e3e42ea5.jpg" alt="I Am the Villain">
+                <h3>I Am the Villain</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong>51.9M</p>
+                <p><strong>Genre:</strong>Romance</p>
+                <p><strong>Author:</strong>Sejji </p>
+                <p><strong>Number of Episodes:</strong>69</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/ad/54/1a/ad541aca6becc2b51ca1c1fa00a251b7.jpg" alt="Moonstruck Poster">
+                <h3>Moonstruck</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 876,543</p>
+                <p><strong>Genre:</strong> Drama, Romance</p>
+                <p><strong>Author:</strong> Heartbreak Studio</p>
+                <p><strong>Number of Episodes:</strong> 30</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/22/c2/8e/22c28e6f37d2426455b09e807b51e133.jpg" alt="When the Mad Emperor Holds Me">
+                <h3> When the Mad Emperor Holds Me</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 45,673</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> Yim Hye</p>
+                <p><strong>Number of Episodes:</strong> 29</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/4e/7b/c3/4e7bc380a34e5a646ac351f34098ce77.jpg" alt="Duchess in Ruins">
+                <h3> Duchess in Ruins</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 467,890</p>
+                <p><strong>Genre:</strong> Romance, Drama</p>
+                <p><strong>Author:</strong> Candlebambi</p>
+                <p><strong>Number of Episodes:</strong> 15</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/df/1a/2e/df1a2e63f30acb1b46752c76b2743ca1.jpg" alt="What the Evil Dragon Lives For">
+                <h3> What the Evil Dragon Lives For</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 365,63</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> manubi,Honaran</p>
+                <p><strong>Number of Episodes:</strong> 65</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 11:Frozen Hearts -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/c6/d1/cb/c6d1cb585cfeac162574f6cfda0107f5.jpg" alt="Frozen Hearts">
+                <h3> Frozen Hearts</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 345,63</p>
+                <p><strong>Genre:</strong> Fantasy,Romance</p>
+                <p><strong>Author:</strong> HWIYO</p>
+                <p><strong>Number of Episodes:</strong> 12</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 12:Fallen to Paradise -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/d6/3c/f2/d63cf23fba17afa8333ac8aa60f6fde6.jpg" alt="Fallen to Paradise">
+                <h3> Fallen to Paradise</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 867,867</p>
+                <p><strong>Genre:</strong> Romance,Fantasy</p>
+                <p><strong>Author:</strong> Candlebambi</p>
+                <p><strong>Number of Episodes:</strong> 51</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/90/10/1e/90101e457cb0a4801af687d6dd9ebf3b.jpg" alt="Not Your Typical Reincarnation Story Poster">
+                <h3>Not Your Typical Reincarnation Story</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1,234,567</p>
+                <p><strong>Genre:</strong> Fantasy, Romance</p>
+                <p><strong>Author:</strong> Lemon Frog</p>
+                <p><strong>Number of Episodes:</strong> 53</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 2: The Remarried Empress -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/12/e7/5d/12e75d48ee005c299216e04efb778fa1.jpg" alt="The Remarried Empress Poster">
+                <h3>The Remarried Empress</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 3,456,789</p>
+                <p><strong>Genre:</strong> Romance, Fantasy</p>
+                <p><strong>Author:</strong> Alphatales</p>
+                <p><strong>Number of Episodes:</strong> 120</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 3: My In-Laws are Obsessed with Me -->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/60/26/4b/60264b094e4bdf929cefc91d7134ccdd.jpg" alt="My In-Laws are Obsessed with Me Poster">
+                <h3>My In-Laws are Obsessed with Me</h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 567,890</p>
+                <p><strong>Genre:</strong> Romance, Drama</p>
+                <p><strong>Author:</strong> LoveSeeker</p>
+                <p><strong>Number of Episodes:</strong> 42</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+        </div>
+    </div>
+    <!-- Drama Webtoon Details Page -->
+     <div id="dramaPage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Drama Webtoons</h2>
+        <div class="webtoon-container">
+            <!-- Webtoon 1:To Whom It No Longer Concerns-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/1e/d3/2f/1ed32f14a34683c537ee41addf0e2e6c.jpg" alt="To Whom It No Longer Concerns">
+                <h3> To Whom It No Longer Concerns </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>23.3874,845 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>LICO,fairydragon</p>
+                <p><strong>Number of Episodes:</strong> 33</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 2:Selfish Romance-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/fd/46/92/fd4692a7fb73c941841c1c23ec2ea504.jpg" alt="Selfish Romance">
+                <h3> Selfish Romance </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>18.476,084 </p>
+                <p><strong>Genre:</strong> Drama,Romance </p>
+                <p><strong>Author:</strong>Gyogyo Park</p>
+                <p><strong>Number of Episodes:</strong> 31</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 3:Couple Breaker-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/51/aa/27/51aa2797e75a99dc7dd1460107217069.jpg" alt="Couple Breaker">
+                <h3> Couple Breaker </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>35.864,935 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>Maenggi Ki,Taegeon </p>
+                <p><strong>Number of Episodes:</strong> 82</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 4:Trapped in a Soap Opera-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/e8/ad/fa/e8adfa1f469f924befa4344c33d11089.jpg" alt="Trapped in a Soap Opera">
+                <h3> Trapped in a Soap Opera </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>11.835,936 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>Ganno,Apricot.K author info </p>
+                <p><strong>Number of Episodes:</strong> 30</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+           <!-- Webtoon 5:I'm the Queen in This Life-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/19/a5/34/19a534ecb775b6849ec49af0a6613ad3.jpg" alt="I'm the Queen in This Life">
+                <h3> I'm the Queen in This Life </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>94.263,943 </p>
+                <p><strong>Genre:</strong> Drama,Fantasy </p>
+                <p><strong>Author:</strong>Themis,Omin ... author info </p>
+                <p><strong>Number of Episodes:</strong> 120</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 6:The Perfect Contract-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/4c/94/06/4c940615ee36a33ac5fee2963a2186be.jpg" alt="The Perfect Contract">
+                <h3> The Perfect Contract </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 7.173,946</p>
+                <p><strong>Genre:</strong> Drama,Romance</p>
+                <p><strong>Author:</strong>TTUSOL,TAEZA</p>
+                <p><strong>Number of Episodes:</strong> 27</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+           <!-- Webtoon 7:Cry, or Better Yet, Beg-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/60/83/aa/6083aa4ed6feece225c2c23e5174d0bf.jpg" alt="Cry, or Better Yet, Beg">
+                <h3> Cry, or Better Yet, Beg </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>15.963,835 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>Cry, or Better Yet, Beg </p>
+                <p><strong>Number of Episodes:</strong> 30</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+               <!-- Webtoon 8:Your Throne-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/6f/2d/fb/6f2dfb85e69d7c3530243ba4ef55008a.jpg" alt="Your Throne">
+                <h3> Your Throne </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>178.196,836 </p>
+                <p><strong>Genre:</strong> Drama,Fantasy </p>
+                <p><strong>Author:</strong>SAM </p>
+                <p><strong>Number of Episodes:</strong> 239</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 9:Behind Her Highness’s Smile-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f0/79/11/f07911339040505777b03fb58b289c2c.jpg" alt="Behind Her Highness’s Smile">
+                <h3> Behind Her Highness’s Smile </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 9.754,976</p>
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Author:</strong>Studio wooridle,Amid</p>
+                <p><strong>Number of Episodes:</strong> 29</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 10:Return Your Soul-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/9c/41/a1/9c41a1ca66986281c3e1bdcbd9d6ec50.jpg" alt="Return Your Soul">
+                <h3> Return Your Soul </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 1.837,028</p>
+                <p><strong>Genre:</strong> Drama,Romance</p>
+                <p><strong>Author:</strong>Yaongyi </p>
+                <p><strong>Number of Episodes:</strong> 13</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 11:Dear Nemesis-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/29/26/87/2926871f30c409e98b0cd5633b62dbd8.jpg" alt="Dear Nemesis">
+                <h3> Dear Nemesis </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>32.635,973 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>MUJEONG,ohsso </p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 12:Wished You Were Dead-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/3e/ba/9c/3eba9cbbd0d5d1ecc7061c52cf2e4a84.jpg" alt="Wished You Were Dead">
+                <h3> Wished You Were Dead </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>103.463,964 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>SEOCHEONG,ARAN </p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 13:I Don't Hate Us-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/52/f7/4b/52f74b83c55cbb7f08351a01b468c5c6.jpg" alt="I Don't Hate Us">
+                <h3>I Don't Hate Us </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 5.473,943</p>
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Author:</strong>gpiee </p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 14:Mom, I'm Sorry-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/4a/f8/87/4af8870c04f57bd564051792a67a5d5f.jpg" alt="Mom, I'm Sorry">
+                <h3> Mom, I'm Sorry </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>46.438,985 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>MiTi,GUGU author info </p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 15:Knife in Her Heart-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/ab/a0/71/aba071fe6e36222073ee5980265c43cf.jpg" alt="Knife in Her Heart">
+                <h3>Knife in Her Heart </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 4.587,964</p>
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Author:</strong>ori </p>
+                <p><strong>Number of Episodes:</strong> 16</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 16:Back to You-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/98/08/9c/98089caf36438df125573980dfff8419.jpg" alt="Back to You">
+                <h3>Back to You </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong>41.974,086 </p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>Honey B </p>
+                <p><strong>Number of Episodes:</strong> 9</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 17:Secretary Out-of-Order-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/44/33/4d/44334dcfa43593580229ad44661c571d.jpg" alt="Secretary Out-of-Order">
+                <h3>Secretary Out-of-Order </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong> 32.795,864</p>
+                <p><strong>Genre:</strong> Drama,Romance </p>
+                <p><strong>Author:</strong>QuornQuorn , Parand </p>
+                <p><strong>Number of Episodes:</strong> 7</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+            <!-- Webtoon 18:Winter Woods-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/1e/c2/8a/1ec28a5ef568ef582916be1d66222d82.jpg" alt="Winter Woods">
+                <h3>Winter Woods </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong> 71.479,953</p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>COSMOS,VAN.J </p>
+                <p><strong>Number of Episodes:</strong> 18</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 19:Maya's World-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/61/1d/b0/611db05af610f69d2cedd2e04e84efbf.jpg" alt="Maya's World">
+                <h3>Maya's World </h3>
+                <div class="rating">
+                    <span>⭐⭐⭐⭐</span> <span>Rating: 4.5/5</span>
+                </div>
+                <p><strong>Viewer Count:</strong> 2.754,086</p>
+                <p><strong>Genre:</strong> Drama</p>
+                <p><strong>Author:</strong>Tupaikidal </p>
+                <p><strong>Number of Episodes:</strong> 4</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+             <!-- Webtoon 20:Take Me, I'm Yours-->
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/e4/71/ff/e471ff8e2dabd8698d05a955828c6a3b.jpg" alt="Take Me, I'm Yours">
+                <h3>Take Me, I'm Yours </h3>
+                <div class="rating">
+                <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                </div>
+                <p><strong>Viewer Count:</strong> 14.275,953</p>
+                <p><strong>Genre:</strong> Drama </p>
+                <p><strong>Author:</strong>RoseBean , One Punch Rabbit </p>
+                <p><strong>Number of Episodes:</strong> 115</p>
+                <p><strong>Where to read:</strong> WEBTOON</p>
+            </div>
+        </div>
+    </div>
+   
+    <!-- Thriller Webtoon Details Page -->
+    <div id="thrillerPage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Thriller Webtoons</h2>
+        <div class="webtoon-container">
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/69/82/e9/6982e98ca98e918b58eb444f74c7a424.jpg" alt="Stealing Her Place">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Stealing Her Place</h3>
+                  <p><strong>Author:</strong>SERAVIEE , 2L </p>
+                <p>Viewer Count: 3.2M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes: 34</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/86/61/02/866102b1c57523b6fbe6e9df785aa218.jpg" alt="Dead Mansion">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Dead Mansion</h3>
+                  <p><strong>Author:</strong>SGT </p>
+                <p>Viewer Count: 1.4M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes: 26</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/a3/f2/77/a3f27712114861962ef88bd76e2bf660.jpg" alt="The Gwichon Village Mystery">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>The Gwichon Village Mystery</h3>
+                  <p><strong>Author:</strong>Daehan LEE , YELLOW_SHEEP </p>
+                <p>Viewer Count: 2.4M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:33 </p>
+            </div>
+         
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/03/ce/3b/03ce3b44a86d0ef6877901f7b3e2eaf0.jpg" alt="Phantom Whispers">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Phantom Whispers</h3>
+                  <p><strong>Author:</strong>moonkyoung kim  </p>
+                <p>Viewer Count:1.1M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:21 </p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/3c/31/f1/3c31f1c7a37b3a6e96755163f8466c73.jpg" alt="Nocturne">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Nocturne</h3>
+                  <p><strong>Author:</strong>Fyyaa123 </p>
+                <p>Viewer Count:8.9M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:51</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/6f/c2/96/6fc29663ad7ab2b7146a4246781947f9.jpg" alt="To Drown In You">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>To Drown In You</h3>
+                  <p><strong>Author:</strong>Jaengnwo , Sung sil </p>
+                <p>Viewer Count: 768,899</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:25</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/70/cb/c0/70cbc0699baea77f58d503f5b2125d55.jpg" alt="Trapped">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Trapped</h3>
+                  <p><strong>Author:</strong>HAEMURI </p>
+                <p>Viewer Count: 20.8M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:10</p>
+             </div>
+              <div class="webtoon">
+                <img src="https://swebtoon-phinf.pstatic.net/20241024_193/1729703964689hvNav_JPEG/0EpisodeList_Mobile.jpg?type=crop540_540" alt="My Girlfriend">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>My Girlfriend</h3>
+                  <p><strong>Author:</strong>Park_ci </p>
+                <p>Viewer Count:2.5M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:23 </p>
+            </div>
+              <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/51/d7/60/51d7600ee68e9bcb3a4a654497e2bcaf.jpg" alt="Replaced">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Replaced</h3>
+                  <p><strong>Author:</strong>NICO</p>
+                <p>Viewer Count: 1.9M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:42</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/f9/e3/d1/f9e3d1fbb07d0312fe60a87b4d45f049.jpg" alt="King Game">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>King Game</h3>
+                  <p><strong>Author:</strong>Shin Hyungwuk,killer whale</p>
+                <p>Viewer Count:1.1M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:47</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/01/8b/de/018bde6b5c21cf1aad8574fa55df9bb7.jpg" alt="Welfare Center">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Welfare Center</h3>
+                  <p><strong>Author:</strong>NANA</p>
+                <p>Viewer Count:6.1M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:7</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/58/77/e7/5877e7b69cb592d94dd90f90f4e9ce10.jpg" alt="Dear X">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Dear X</h3>
+                  <p><strong>Author:</strong>VANZIUN</p>
+                <p>Viewer Count:9.2M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:6</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/32/8d/9a/328d9a206ebad09b2882f0bd316cd9e4.jpg" alt="Pyramid Game">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Pyramid Game</h3>
+                  <p><strong>Author:</strong>Dalgonyak</p>
+                <p>Viewer Count:17.3M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:11</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/23/c0/8d/23c08dc3f52045eadf833eb936259bb1.jpg" alt="Garden of the Dead Flowers">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Garden of the Dead Flowers</h3>
+                  <p><strong>Author:</strong>Sero , Corbenyx </p>
+                <p>Viewer Count:3.6M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:7</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/82/cb/7d/82cb7d55510563be833d6ac1b1cae437.jpg" alt="On-Air">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>On-Air</h3>
+                  <p><strong>Author:</strong>Shim bokil</p>
+                <p>Viewer Count:1.9M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:8</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNzJrlp58pdqUtb5KR8L0DYxpCGBxDEnUlR5301kh931yMxmBv_slohImzWCyjbl9l46E&usqp=CAU" alt="Arma">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Arma</h3>
+                  <p><strong>Author:</strong>SGT</p>
+                <p>Viewer Count:12.6M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:9</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/36/ac/30/36ac301681bbac3421eeba5ce64299d5.jpg" alt="#Killstagram">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>#Killstagram</h3>
+                  <p><strong>Author:</strong>Ryoung</p>
+                <p>Viewer Count:45.4M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:43</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/93/38/e4/9338e43b1a442d392519cc9b9c5e12d1.jpg" alt="Scroll if You Dare">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>Scroll if You Dare</h3>
+                  <p><strong>Author:</strong>Various Artists</p>
+                <p>Viewer Count:10.5M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:27</p>
+            </div>
+              <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/dd/d8/1c/ddd81ccfd3c48b18fe60e5c01e1eb115.jpg" alt="The Guy Upstairs">
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                 <h3>The Guy Upstairs</h3>
+                  <p><strong>Author:</strong>Hanza Art</p>
+                <p>Viewer Count:61M</p>
+                <p>Genre: Thriller</p>
+                <p>Episodes:56</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Webtoon Details Page -->
+     <div id="actionPage" class="webtoon-details">
+        <button class="back-button" onclick="goBackToGenres()"></button>
+        <h2>Action Webtoons</h2>
+        <div class="webtoon-container">
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/e4/df/0a/e4df0ac74136fdc03a80e1080defd61c.jpg" alt="Windbreaker">
+                <h3>Windbreaker</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+         
+                <p>Viewer Count: 1,200,000</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 120</p>
+            </div>
+   
+       
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/6c/b9/0e/6cb90e0412b329b9ad927eb31e9676cf.jpg" alt="The Mafia Nanny">
+                <h3>The Mafia Nanny</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+   
+                <p>Viewer Count:171.3M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 63</p>
+            </div>
+   
+         
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/56/ed/b9/56edb907b3d5a635bcb50fc7050a530e.jpg" alt="Killer Peter">
+                <h3>Killer Peter</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:18.5M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 75</p>
+            </div>
+   
+
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/4e/f7/2c/4ef72cb44cdd37d87313d2a586f00168.jpg" alt="Omniscient Reader">
+                <h3>Omniscient Reader</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:450.1M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 246</p>
+            </div>
+   
+       
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/a1/cc/2b/a1cc2b69c3e289aab5cc54ae436a38d3.jpg" alt="Lookism">
+                <h3>Lookism</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:928.8M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 536</p>
+            </div>
+
+       
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/05/d0/20/05d020159934224736f8b568abd68bc6.jpg" alt="Study Group">
+                <h3>Study Group</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:55.5M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 60</p>
+            </div>
+           
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/11/a0/32/11a0325fd75f12901e43db3a1a61983b.jpg" alt="Reborn Rich">
+                <h3>Reborn Rich</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:14.3M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 122</p>
+            </div>
+           
+            <div class="webtoon">
+                <img src="https://i.pinimg.com/736x/b9/86/a3/b986a3e4a43f8da73239a2bb6524623d.jpg" alt="Dead Mansion">
+                <h3>Dead Mansion</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:1.7M</p>
+                <p>Genre: Action</p>
+                <p>Episodes: 31</p>
+            </div>
+           
+             <div class="webtoon">
+                <img src="https://swebtoon-phinf.pstatic.net/20240201_14/17067729049761hRAb_JPEG/9EpisodeList_Mobile.jpg?type=crop540_540" alt="Zombie Revelation: 82-08">
+                <h3>Zombie Revelation: 82-08</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:2.7M</p>
+                <p>Genre: Action</p>
+                <p>Episodes:61</p>
+            </div>
+            <div class="webtoon">
+                <img src="https://swebtoon-phinf.pstatic.net/20230130_85/1675035632712X6CbX_JPEG/4Connect_landingpage_mobile.jpg?type=crop540_540" alt="Connect">
+                <h3>Connect</h3>
+                 <span>⭐⭐⭐⭐⭐</span> <span>Rating: 5/5</span>    
+                <p>Viewer Count:2M</p>
+                <p>Genre: Action</p>
+                <p>Episodes:08</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

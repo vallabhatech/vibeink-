@@ -1,0 +1,248 @@
+
+           body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: pink;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            width: 100%;
+            background-color: #7a5bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #5e3ad9;
+        }
+
+        .gallery-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #greeting {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 200px;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: url('https://www.svgrepo.com/download/305142/arrow-ios-back.svg') no-repeat center;
+            background-size: contain;
+            width: 30px;
+            height: 30px;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        .back-button:hover {
+            opacity: 0.8;
+        }
+
+    /* Genre Selection Page */
+    #genreSelectionPage h3 {
+        font-size: 50px; /* Increased font size for the question */
+    }
+
+    #genreSelectionPage label {
+        font-size: 50px; /* Increased font size for the checkboxes */
+    }
+
+    #genreSelectionPage .next-button {
+        font-size: 50px; /* Optional: Larger text size for the "Next" button */
+    }
+
+        /* Webtoon Details Page Styles */
+        .webtoon-details {
+            text-align: center;
+            padding: 40px;
+            border: 3px solid #ccc;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .webtoon-details img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .webtoon-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .webtoon {
+            text-align: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ddd;
+        }
+
+        .webtoon h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .webtoon p {
+            margin: 5px 0;
+        }
+
+        .webtoon .rating {
+            margin-bottom: 10px;
+        }
+
+        .webtoon .rating span {
+            font-size: 18px;
+            color: #ffcc00;
+        }
+
+        /* Hidden by default, shown after clicking Next button */
+        .webtoon-details {
+            text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+           
+        }
+
+        /* Comedy Page Styles */
+        .comedy-webtoon-container {
+            text-align: center;
+            padding: 40px;
+            border: 3px solid #ccc;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hidden by default, shown after clicking Next button */
+        .comedy-webtoon-container {
+                       text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+        }
+
+        /* Initially hide the fantasy page */
+        .webtoon-details {
+            display: none;
+        }
+.fantasy-webtoon-details {
+    /* Inherit common styles for the details pages */
+    text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+
+/* Comedy Webtoon Details Page */
+.comedy-webtoon-details {
+    /* Inherit common styles for the details pages */
+    text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+
+/* Romance Webtoon Details Page */
+.romance-webtoon-details {
+    /* Inherit common styles for the details pages */
+ text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+
+/* Thriller Webtoon Details Page */
+.thriller-webtoon-details {
+    /* Inherit common styles for the details pages */
+    text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+
+/* Action Webtoon Details Page */
+.action-webtoon-details {
+    /* Inherit common styles for the details pages */
+  text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+
+/* Drama Webtoon Details Page */
+.drama-webtoon-details {
+text-align: center;
+    padding: 30px;
+    max-height: 80vh; /* Limit the height of the container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto;
+}
+    
